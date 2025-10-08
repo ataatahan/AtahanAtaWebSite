@@ -9,22 +9,22 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function kac() {
-  const isMobile = window.innerWidth < 600; // basit mobil kontrol
+  hayirBtn.style.position = "absolute"; // sadece kaçarken absolute olsun
 
-  const rangeX = isMobile ? 100 : 200; // mobilde daha az
-  const rangeY = isMobile ? 300 : 500;
+  const rangeX = 600; // mobilde daha yakın mesafe
+  const rangeY = 400;
 
   const x = Math.floor(Math.random() * rangeX) - rangeX / 2;
   const y = Math.floor(Math.random() * rangeY) - rangeY / 2;
 
-  hayirBtn.style.position = "relative";
-  hayirBtn.style.left = x + "px";
-  hayirBtn.style.top = y + "px";
+  hayirBtn.style.left = (hayirBtn.offsetLeft + x) + "px";
+  hayirBtn.style.top = (hayirBtn.offsetTop + y) + "px";
 
   hayirBtn.style.transition = "left 180ms ease, top 180ms ease, transform 120ms";
-  hayirBtn.style.transform = "scale(1.02)";
-  setTimeout(() => (hayirBtn.style.transform = "scale(1)"), 160);
+  hayirBtn.style.transform = "scale(1.05)";
+  setTimeout(() => (hayirBtn.style.transform = "scale(1)"), 150);
 }
+
 
 
   hayirBtn.addEventListener("mouseenter", kac); // PC için
