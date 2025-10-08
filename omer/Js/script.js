@@ -9,15 +9,15 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function kac() {
-  const rangeX = 500; // sağa sola max 80px
-  const rangeY = 500; // yukarı aşağı max 50px
+  const isMobile = window.innerWidth < 600; // basit mobil kontrol
+
+  const rangeX = isMobile ? 100 : 200; // mobilde daha az
+  const rangeY = isMobile ? 300 : 500;
 
   const x = Math.floor(Math.random() * rangeX) - rangeX / 2;
   const y = Math.floor(Math.random() * rangeY) - rangeY / 2;
 
   hayirBtn.style.position = "relative";
-  hayirBtn.style.right = "auto";
-  hayirBtn.style.bottom = "auto";
   hayirBtn.style.left = x + "px";
   hayirBtn.style.top = y + "px";
 
@@ -27,11 +27,9 @@ document.addEventListener("DOMContentLoaded", function () {
 }
 
 
-  hayirBtn.addEventListener("pointerenter", kac, { passive: true });
-  hayirBtn.addEventListener("touchstart", function (e) {
+  hayirBtn.addEventListener("mouseenter", kac); // PC için
+hayirBtn.addEventListener("touchstart", kac, { passive: true }); // mobil için
 
-    kac();
-  }, { passive: true });
 
 
   function setInitialPosition() {
