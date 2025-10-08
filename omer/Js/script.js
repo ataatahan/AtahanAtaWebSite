@@ -11,8 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
   function kac() {
   hayirBtn.style.position = "absolute"; // sadece kaçarken absolute olsun
 
-  const rangeX = 600; // mobilde daha yakın mesafe
-  const rangeY = 400;
+  const isMobile = window.innerWidth < 600;
+  const rangeX = isMobile ? 400 : 800;
+  const rangeY = isMobile ? 300 : 500;
 
   const x = Math.floor(Math.random() * rangeX) - rangeX / 2;
   const y = Math.floor(Math.random() * rangeY) - rangeY / 2;
@@ -25,9 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
   setTimeout(() => (hayirBtn.style.transform = "scale(1)"), 150);
 }
 
-
-
-  hayirBtn.addEventListener("mouseenter", kac); // PC için
+hayirBtn.addEventListener("mouseenter", kac); // PC için
 hayirBtn.addEventListener("touchstart", kac, { passive: true }); // mobil için
 
 
