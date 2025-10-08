@@ -84,6 +84,7 @@ h1 {
   bottom: 10px;
   z-index: 10;
   touch-action: manipulation;
+  transition: left 180ms ease, top 180ms ease, transform 120ms;
 }
 
 #evet {
