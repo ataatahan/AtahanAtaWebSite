@@ -12,9 +12,9 @@ document.addEventListener("DOMContentLoaded", function () {
   function kac() {
     hayirBtn.style.position = "absolute"; // kaçarken absolute olsun
 
-    const isMobile = window.innerWidth < 800;
-    const rangeX = isMobile ? 600 : 1000;
-    const rangeY = isMobile ? 500 : 700;
+    const isMobile = window.innerWidth < 600;
+    const rangeX = isMobile ? 400 : 800;
+    const rangeY = isMobile ? 300 : 500;
 
     let newLeft, newTop;
     let tries = 0;
