@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>İletişim — Hemen Gönder</title>
+
+    <!-- stil -->
+    <link rel="stylesheet" href="../css/iletisim.css" />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
+      defer
+    ></script>
+
+    <script src="../js/iletisim.js" defer></script>
+  </head>
+  <body>
+    <main class="wrap">
+      <form id="contactForm" class="card" autocomplete="off">
+        <h1>Mesaj Gönder</h1>
+
+        <label for="from_name">İsim</label>
+        <input
+          id="from_name"
+          type="text"
+          name="from_name"
+          placeholder="Adınız"
+          required
+        />
+
+        <label for="reply_to">E-posta</label>
+        <input
+          id="reply_to"
+          type="email"
+          name="reply_to"
+          placeholder="ornek@adres.com"
+          required
+        />
+
+        <label for="subject">Konu</label>
+        <input
+          id="subject"
+          type="text"
+          name="subject"
+          placeholder="Konu"
+          required
+        />
+
+        <label for="message">Mesaj</label>
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Mesajınız..."
+          required
+        ></textarea>
+
+        <div class="actions">
+          <button type="submit" class="btn">Gönder</button>
+          <button type="button" id="clearBtn" class="btn ghost">Temizle</button>
+          <div class="actions-home">
+            <a
+              class="btn-home"
+              href="../index.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              >🏠 -></a
+            >
+          </div>
+        </div>
+
+        <p id="status" class="status" aria-live="polite"></p>
+      </form>
+    </main>
+  </body>
+</html>
