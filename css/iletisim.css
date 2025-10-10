@@ -77,12 +77,10 @@ textarea {
   display: inline-block;
   border: 4px solid #000000;
   font-family: "AtaCustomFont", sans-serif;
-  font-size:x-large;
+  font-size: x-large;
   transition: transform 150ms ease, box-shadow 150ms ease;
 }
-
-.btn:hover
-{
+.btn:hover {
   transform: translateY(-1px);
   box-shadow: 5px 5px 0px rgba(0, 0, 0, 1);
 }
@@ -90,7 +88,6 @@ textarea {
   background: #f3f4f6;
   color: #111;
 }
-
 .btn-home {
   background: #ffa600;
   color: rgb(0, 0, 0);
@@ -98,20 +95,18 @@ textarea {
   border-radius: 10px;
   cursor: pointer;
   text-decoration: none;
-  display: inline-flex;        /* flex yaptık */
-  align-items: center;         /* dikey ortala */
-  justify-content: center;     /* yatay ortala */
+  display: inline-flex; /* flex yaptık */
+  align-items: center; /* dikey ortala */
+  justify-content: center; /* yatay ortala */
   font-family: "AtaCustomFont", sans-serif;
   font-size: x-large;
-  padding: 10px 14px; 
+  padding: 10px 14px;
   transition: transform 150ms ease, box-shadow 150ms ease;
 }
-
 .btn-home:hover {
   transform: translateY(-1px);
   box-shadow: 5px 5px 0px rgba(0, 0, 0, 1);
 }
-
 .status {
   margin-top: 10px;
   font-size: 14px;
@@ -127,20 +122,63 @@ textarea {
 .center {
   text-align: center;
 }
-
-@media (max-width: 520px) {
-  .wrap {
-    padding: 12px;
-  }
-}
-
-
-#from_name, #reply_to, #subject, #message
-{
+#from_name,
+#reply_to,
+#subject,
+#message {
   font-family: "AtaCustomFont", sans-serif;
 }
-
 .actions-home {
+  margin-left: auto;
+  color: black;
+}
+
+@media (max-width: 480px) {
+  .wrap {
+  width: 100%;
+  max-width: 600px;
+  padding: 24px;
+}
+  body {
+  background: linear-gradient(180deg, var(--bg), #0058cc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "AtaCustomFont", sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+}
+  .card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(226, 113, 8, 0.06);
+  border: 5px solid #000000;
+}
+  .card h1 {
+    font-size: 18px;
+  }
+  label {
+    font-size: 16px;
+  }
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    font-size: 14px;
+    padding: 8px;
+    border-width: 3px;
+  }
+  .btn,
+  .btn-home {
+    font-size: large;
+    padding: 8px 12px;
+    border-width: 3px;
+  }
+  .actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .actions-home {
     margin-left: auto;
-    color: black;
+  }
 }
