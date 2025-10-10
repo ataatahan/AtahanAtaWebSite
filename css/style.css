@@ -1,4 +1,5 @@
-*{
+*
+{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -17,11 +18,13 @@ html, body
 }
 
 @media (max-width: 400px) {
-  :root {
+  :root
+  {
     --black-border: 4px;
   }
 
-  .box {
+  .box
+  {
     width: 94vw;
     min-height: 220px;
     padding: 1.2rem;
@@ -29,7 +32,8 @@ html, body
     box-shadow: 8px 8px 0px var(--shadow);
   }
 
-  .ata-img {
+  .ata-img
+  {
     position: absolute;
     top: -12%;
     left: 2%;
@@ -39,31 +43,34 @@ html, body
     border: calc(var(--black-border)) solid black;
   }
 
-  .git,
-  .linkedin,
-  .youtube {
+  .git, .linkedin, .youtube
+  {
     width: 56px;
     padding: 0.4rem;
     top: -8%;
     right: auto;
   }
 
-  .youtube {
+  .youtube
+  {
     right: 12%;
     left: auto;
   }
 
-  .linkedin {
+  .linkedin
+  {
     right: 28%;
     left: auto;
   }
 
-  .git {
+  .git
+  {
     right: 2%;
     left: auto;
   }
 
-  .onyazi {
+  .onyazi
+  {
     font-size: 0.95rem;
     width: 88%;
   }
@@ -121,16 +128,16 @@ html, body
 
 .onyazi
 {
-  position: unset;
-  width: 70%;
-  max-width: 200%;
-  height: auto;
+  width: 80%;
+  max-width: 100%;
   color: #252424;
   font-size: x-large;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
+  word-wrap:break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
+
 
 .menu
 {
