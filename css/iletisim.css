@@ -134,57 +134,61 @@ textarea {
 }
 
 @media (max-width: 480px) {
-  body {
-    background: linear-gradient(180deg, var(--bg), #0058cc);
-    font-family: "AtaCustomFont", sans-serif;
-    padding: 20px 0;
-    box-sizing: border-box;
+  /* Güvenli bölge boşlukları (iOS Safe Area) */
+  html, body {
+    padding: env(safe-area-inset-top) env(safe-area-inset-right)
+             env(safe-area-inset-bottom) env(safe-area-inset-left);
+    min-height: 100vh;
   }
 
+  /* Ana kapsayıcı ayarları */
   .wrap {
-    width: 100%;
-    max-width: 600px;
-    padding: 24px;
-    margin: 20px auto;
+    margin: 0 12px;
+    padding: 16px;
+    max-width: 100%;
   }
 
   .card {
-    background: var(--card);
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 8px 30px rgba(226, 113, 8, 0.06);
-    border: 5px solid #000000;
+    padding: 16px;
   }
 
+  /* Başlık */
   .card h1 {
-    font-size: 18px;
+    font-size: 20px;
+    line-height: 1.2;
   }
 
+  /* Form etiket ve alanları */
   label {
-    font-size: 16px;
+    font-size: 14px;
+    margin-top: 8px;
   }
 
   input[type="text"],
   input[type="email"],
   textarea {
+    width: 100%;
     font-size: 14px;
     padding: 8px;
     border-width: 3px;
   }
 
+  textarea {
+    min-height: 100px;
+  }
+
+  /* Butonlar ve aksiyonlar */
+  .actions,
+  .actions-home {
+    flex-direction: column;
+    gap: 10px;
+  }
+
   .btn,
   .btn-home {
+    width: 100%;
     font-size: large;
-    padding: 8px 12px;
+    padding: 12px;
     border-width: 3px;
-  }
-
-  .actions {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .actions-home {
-    margin-left: auto;
   }
 }
