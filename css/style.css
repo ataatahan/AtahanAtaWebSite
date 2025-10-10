@@ -1,0 +1,195 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body
+{
+  background-color: #64a266;
+  height: 100%;
+}
+@font-face
+{
+  font-family: "AtaCustomFont";
+  src: url("../fonts/DeliciousHandrawn-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media (max-width: 400px) {
+  :root {
+    --black-border: 4px;
+  }
+
+  .box {
+    width: 94vw;
+    min-height: 220px;
+    padding: 1.2rem;
+    border-radius: 10px;
+    box-shadow: 8px 8px 0px var(--shadow);
+  }
+
+  .ata-img {
+    position: absolute;
+    top: -12%;
+    left: 2%;
+    width: 72px;
+    max-width: 30%;
+    border-radius: 10px;
+    border: calc(var(--black-border)) solid black;
+  }
+
+  .git,
+  .linkedin,
+  .youtube {
+    width: 56px;
+    padding: 0.4rem;
+    top: -8%;
+    right: auto;
+  }
+
+  .youtube {
+    right: 12%;
+    left: auto;
+  }
+
+  .linkedin {
+    right: 28%;
+    left: auto;
+  }
+
+  .git {
+    right: 2%;
+    left: auto;
+  }
+
+  .onyazi {
+    font-size: 0.95rem;
+    width: 88%;
+  }
+}
+
+/* Erişilebilirlik için focus stili */
+.git:focus, .linkedin:focus, .youtube:focus
+{
+  outline: 3px dashed rgba(255, 255, 255, 0.2);
+  outline-offset: 4px;
+}
+
+.container
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.box
+{
+  position: relative;
+  width: 800px;
+  height: 55%;
+  background: #ffa600;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  box-shadow: 15px 15px 0px rgb(0, 0, 0, 0.7);
+  font-size: xx-large;
+  border: 9px solid black;
+  
+  font-size: x-large;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "AtaCustomFont", sans-serif;
+}
+
+.ata-img
+{
+  position: absolute;
+  top: -55px;
+  left: -10%;
+  width: 20%;
+  max-width: 320%;
+  height: auto;
+  border-radius: 12px;
+  border: 9px solid black;
+  box-shadow: 10px 10px 0px rgb(0, 0, 0, 0.7);
+}
+
+.onyazi
+{
+  position: unset;
+  width: 70%;
+  max-width: 200%;
+  height: auto;
+  color: #252424;
+  font-size: x-large;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu
+{
+  position: absolute;
+  top: -6%;
+  right: 3%;
+  display: flex;
+  gap: 5%;
+  justify-content: flex-end;
+}
+
+.menu div
+{
+  width: 110px;
+  height: 50px;
+  border: 9px solid black;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "AtaCustomFont", sans-serif;
+  font-size: x-large;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.git
+{
+  background-color: #252424;
+}
+
+.git:hover
+{
+  transition: 150ms;
+  font-size: xx-large;
+  box-shadow: 5px 5px 0px rgb(0, 0, 0, 1);
+}
+
+.linkedin
+{
+  background-color: #0a66c2;
+}
+
+.linkedin:hover
+{
+  transition: 150ms;
+  font-size: xx-large;
+  box-shadow: 5px 5px 0px rgb(0, 0, 0, 1);
+}
+
+.youtube
+{
+  background-color: #ff0000;
+}
+
+.youtube:hover
+{
+  transition: 150ms;
+  font-size: xx-large;
+  box-shadow: 5px 5px 0px rgb(0, 0, 0, 1);
+}
