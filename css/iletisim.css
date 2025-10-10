@@ -134,33 +134,36 @@ textarea {
 }
 
 @media (max-width: 480px) {
-  .wrap {
-  width: 100%;
-  max-width: 600px;
-  padding: 24px;
-}
   body {
-  background: linear-gradient(180deg, var(--bg), #0058cc);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "AtaCustomFont", sans-serif;
-  padding: 20px;
-  box-sizing: border-box;
-}
+    background: linear-gradient(180deg, var(--bg), #0058cc);
+    font-family: "AtaCustomFont", sans-serif;
+    padding: 20px 0;
+    box-sizing: border-box;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: 600px;
+    padding: 24px;
+    margin: 20px auto;
+  }
+
   .card {
-  background: var(--card);
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(226, 113, 8, 0.06);
-  border: 5px solid #000000;
-}
+    background: var(--card);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(226, 113, 8, 0.06);
+    border: 5px solid #000000;
+  }
+
   .card h1 {
     font-size: 18px;
   }
+
   label {
     font-size: 16px;
   }
+
   input[type="text"],
   input[type="email"],
   textarea {
@@ -168,16 +171,19 @@ textarea {
     padding: 8px;
     border-width: 3px;
   }
+
   .btn,
   .btn-home {
     font-size: large;
     padding: 8px 12px;
     border-width: 3px;
   }
+
   .actions {
     flex-direction: column;
     gap: 8px;
   }
+
   .actions-home {
     margin-left: auto;
   }
