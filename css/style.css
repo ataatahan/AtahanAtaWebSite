@@ -14,7 +14,7 @@ html, body {
 }
  
 body {
-  background-color: #1e6421;
+  background-color: #1f6321;
   min-height: 100dvh;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
@@ -47,8 +47,9 @@ body {
  
 .box {
   position: relative;
-  width: min(92vw, 800px);
-  min-height: 55vh;               /* <<< sabit height yerine min-height */
+  width: 800px;
+  min-height: 440px;       
+  margin: 0 auto;       /* <<< sabit height yerine min-height */
   background: #ffa600;
   color: white;
   border: var(--black-border) solid black;
@@ -69,9 +70,7 @@ body {
   height: auto;
   border-radius: 12px;
   border: var(--black-border) solid black;
-  box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.9);
-  outline: 3px dashed rgba(255, 255, 255, 0.2);
-  outline-offset: 5px;
+  box-shadow: 7px 7px 0px rgba(0, 0, 0, 0.9);
 }
  
 /* Menü kutu İÇİNDE kalsın */
@@ -169,7 +168,7 @@ body {
     padding: 1.2rem;
     padding-top: 4.2rem;
     border-radius: 10px;
-    box-shadow: 8px 8px 0px var(--shadow);
+    box-shadow: 7px 7px 0px var(--shadow);
   }
  
   .ata-img {
@@ -195,8 +194,8 @@ body {
 
   .contact
   {
-    top: -50px;
-    right: 229px;
+    top: 410px;
+    right: 8px;
   }
 
   .contact a {
