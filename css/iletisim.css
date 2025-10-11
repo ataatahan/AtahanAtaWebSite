@@ -12,6 +12,7 @@ body {
   height: 100%;
   margin: 0;
   font-family: "AtaCustomFont", sans-serif;
+  cursor: url("../img/cursor/1.png"), auto;
 }
 @font-face {
   font-family: "AtaCustomFont";
@@ -25,6 +26,7 @@ body {
   align-items: center;
   justify-content: center;
   font-family: "AtaCustomFont", sans-serif;
+  cursor: url("../img/cursor/1.png"), auto;
 }
 .wrap {
   width: 100%;
@@ -37,6 +39,7 @@ body {
   border-radius: 12px;
   box-shadow: 0 8px 30px rgba(226, 113, 8, 0.06);
   border: 5px solid #000000;
+  cursor: url("../img/cursor/1.png"), auto;
 }
 .card h1 {
   margin: 0 0 12px;
@@ -47,6 +50,7 @@ label {
   margin-top: 10px;
   font-size: 20px;
   color: var(--muted);
+  cursor: url("../img/cursor/1.png"), auto;
 }
 input[type="text"],
 input[type="email"],
@@ -80,6 +84,7 @@ textarea {
   font-size: x-large;
   transition: transform 150ms ease, box-shadow 150ms ease;
   box-shadow: 5px 5px 0px rgba(0, 0, 0, 1);
+  cursor: url("../img/cursor/3.png"), auto;
 }
 .btn:hover {
   transform: translateY(3px);
@@ -104,6 +109,7 @@ textarea {
   padding: 10px 14px;
   transition: transform 150ms ease, box-shadow 150ms ease;
   box-shadow: 5px 5px 0px rgba(0, 0, 0, 1);
+  cursor: url("../img/cursor/3.png"), auto;
 }
 .btn-home:hover {
   transform: translateY(3px);
@@ -135,11 +141,17 @@ textarea {
   color: black;
 }
 
+.contatcform
+{
+  cursor: url("../img/cursor/4.png"), auto;
+}
+
 @media (max-width: 480px) {
   /* Güvenli bölge boşlukları (iOS Safe Area) */
-  html, body {
+  html,
+  body {
     padding: env(safe-area-inset-top) env(safe-area-inset-right)
-             env(safe-area-inset-bottom) env(safe-area-inset-left);
+      env(safe-area-inset-bottom) env(safe-area-inset-left);
     min-height: 100vh;
   }
 

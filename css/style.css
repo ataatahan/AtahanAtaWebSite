@@ -17,7 +17,13 @@ body {
   background: linear-gradient(to bottom, #4ce6fa, #0a71d8);
   min-height: 100dvh;
   font-family: "AtaCustomFont", sans-serif;
+  cursor: url("../img/cursor/1.png"), auto;
 }
+
+body.clicking {
+  cursor: url("../img/cursor/3.png"), auto;
+}
+
  
 @font-face {
   font-family: "AtaCustomFont";
@@ -96,6 +102,7 @@ body {
   cursor: pointer;
   transition: transform 150ms ease, box-shadow 150ms ease;
   box-shadow: 5px 5px 0px rgba(0, 0, 0, 1);
+  cursor: url("../img/cursor/3.png"), auto;
 }
  
 .menu a:hover {
@@ -132,6 +139,7 @@ body {
   cursor: pointer;
   transition: transform 150ms ease, box-shadow 150ms ease;
   box-shadow: 5px 5px 0px rgba(0, 0, 0, 1);
+  cursor: url("../img/cursor/3.png"), auto;
 }
 
 .contact a:hover
@@ -161,7 +169,7 @@ body {
 /* Küçük ekran düzeni */
 @media (max-width: 480px) {
   :root { --black-border: 4px; }
- 
+
   .box {
     width: 94vw;
     padding: 1.2rem;
@@ -169,7 +177,7 @@ body {
     border-radius: 10px;
     box-shadow: 7px 7px 0px var(--shadow);
   }
- 
+
   .ata-img {
     top: -12%;
     left: 2%;
@@ -177,13 +185,13 @@ body {
     border-radius: 10px;
     border: calc(var(--black-border)) solid black;
   }
- 
+
   .menu {
     top: -23px;
     right: 8px;
     gap: 8px;
   }
- 
+
   .menu a {
     min-width: 72px;
     height: 40px;
@@ -191,8 +199,7 @@ body {
     font-size: 0.95rem;
   }
 
-  .contact
-  {
+  .contact {
     top: 410px;
     right: 8px;
   }
@@ -207,5 +214,10 @@ body {
   .onyazi {
     width: 90%;
     font-size: 0.95rem;
+  }
+
+  /* Mobilde imleç iptal etme (dokunmatik cihazlar için) */
+  body {
+    cursor: auto !important;
   }
 }
