@@ -158,19 +158,18 @@ body.clicking {
   font-size: clamp(1rem, 1.5vw, 1.5rem);
   line-height: 1.5;
   text-align: left;
-  
+  cursor: url("../img/cursor/2.png"), auto;
+ 
   /* Taşmayı engelle */
   word-break: break-word;
   overflow-wrap: anywhere;
   hyphens: auto;
   font-family: "AtaCustomFont", sans-serif;
-  cursor: url("../img/cursor/2.png"), auto;
 }
  
 /* Küçük ekran düzeni */
 @media (max-width: 480px) {
-  :root { --black-border: 4px; 
-  }
+  :root { --black-border: 4px; }
 
   .box {
     width: 94vw;
@@ -178,7 +177,6 @@ body.clicking {
     padding-top: 4.2rem;
     border-radius: 10px;
     box-shadow: 7px 7px 0px var(--shadow);
-    cursor: auto !important;
   }
 
   .ata-img {
@@ -217,7 +215,6 @@ body.clicking {
   .onyazi {
     width: 90%;
     font-size: 0.95rem;
-    cursor: auto !important;
   }
 
   /* Mobilde imleç iptal etme (dokunmatik cihazlar için) */
