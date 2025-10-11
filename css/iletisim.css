@@ -79,10 +79,11 @@ textarea {
   font-family: "AtaCustomFont", sans-serif;
   font-size: x-large;
   transition: transform 150ms ease, box-shadow 150ms ease;
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 1);
 }
 .btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 5px 5px 0px rgba(0, 0, 0, 1);
+  transform: translateY(3px);
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 1);
 }
 .btn.ghost {
   background: #f3f4f6;
@@ -102,10 +103,11 @@ textarea {
   font-size: x-large;
   padding: 10px 14px;
   transition: transform 150ms ease, box-shadow 150ms ease;
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 1);
 }
 .btn-home:hover {
-  transform: translateY(-1px);
-  box-shadow: 5px 5px 0px rgba(0, 0, 0, 1);
+  transform: translateY(3px);
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 1);
 }
 .status {
   margin-top: 10px;
