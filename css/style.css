@@ -172,9 +172,9 @@ body.clicking {
   :root { --black-border: 4px; }
 
   .box {
-    width: 94vw;
+    width: 90vw;
     padding: 1.2rem;
-    padding-top: 4.2rem;
+    padding-top: 4.6rem;
     box-shadow: 7px 7px 0px var(--shadow);
   }
 
@@ -194,8 +194,7 @@ body.clicking {
   .menu a {
     min-width: 52px;
     height: 40px;
-    padding: 0 0.4rem;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
   }
 
   .onyazi {
@@ -210,4 +209,24 @@ body.clicking {
 
   .quote { font-size: 0.88rem; }
   .credit { font-size: 0.78rem; }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+  .box {
+    width: 80vw;
+  }
+  .onyazi {
+    width: 90%;
+  }
+  .menu a {
+    min-width: 60px;
+    height: 44px;
+    font-size: clamp(1rem, 1.1vw, 1.2rem);
+  }
+  .ata-img {
+    top: -5%;
+    left: -9%;
+    width: 72px;
+    width: clamp(80px, 12vw, 120px);
+  }
 }
