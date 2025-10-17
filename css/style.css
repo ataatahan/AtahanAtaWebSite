@@ -1,85 +1,98 @@
+/* 1. Reset ve Global Stiller */
+/* Tüm elementlerin varsayılan margin ve padding'ini sıfırlar, box modelini ayarlar */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
- 
+
+/* 2. CSS Değişkenleri */
+/* Kök değişkenler tanımlanır, kolay güncelleme için */
 :root {
   --shadow: rgba(0, 0, 0, 0.7);
   --black-border: 4px;
+  --primary-color: #fafafa; /* Yeni eklenen: Metin rengi için */
+  --footer-bg: #0f1724; /* Yeni eklenen: Footer arka planı için */
+  --footer-text: #d1d5db; /* Yeni eklenen: Footer metin rengi için */
 }
- 
-html, body {
+
+/* 3. Genel HTML ve Body Stilleri */
+html,
+body {
   height: 100%;
 }
- 
+
 body {
-  background: linear-gradient(to bottom, #2d3748, #1a202c);
+  background: linear-gradient(to bottom, #1a202c);
   min-height: 100dvh;
   font-family: "AtaCustomFont", sans-serif;
-  cursor: url("../img/cursor/1.png"), auto;
+  color: var(--primary-color); /* Değişken kullanımı */
+  cursor: url("../img/cursor/1.png"), auto; /* Varsayılan cursor */
 }
 
 body.clicking {
   cursor: url("../img/cursor/3.png"), auto;
 }
 
- 
+/* 4. Font Tanımlamaları */
 @font-face {
   font-family: "AtaCustomFont";
   src: url("../fonts/CoolveticaRg.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
- 
-/* Erişilebilirlik için focus stili */
-.menu a:focus {
+
+@font-face {
+  font-family: "AtaCustomFonts";
+  src: url("../fonts/DeliciousHandrawn-Regular.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 5. Erişilebilirlik Stilleri */
+.menu a:focus,
+.contact a:focus {
   outline: 3px dashed rgba(255, 255, 255, 0.5);
   outline-offset: 4px;
 }
 
-.contact a:focus
-{
-  outline: 3px dashed rgba(255, 255, 255, 0.5);
-  outline-offset: 4px;
-}
- 
+/* 6. Layout ve Bileşen Stilleri */
 .container {
   min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
- 
+
 .box {
   position: relative;
-  width: 1400px;
-  min-height: 550px;       
+  width: 1350px;
+  min-height: 550px;
   margin: 0 auto;
-  background: linear-gradient(to bottom, #2c2c2c,#181818);
+  background: linear-gradient(to bottom, #2d3748);
   color: white;
   border: var(--black-border) solid black;
-  box-shadow: 15px 15px 0px rgba(0, 0, 0, 0.7);
- 
-  padding: clamp(2rem, 3vw, 2.5rem);
+  box-shadow: 10px 10px 0 var(--shadow);
+  border-radius: 20px;
+  padding: clamp(2rem, 3vw, 2.5rem) clamp(2rem, 3vw, 2.5rem);
   padding-top: clamp(3.5rem, 7vw, 5rem);
 }
- 
+
 .ata-img {
   position: absolute;
   top: -24px;
-  left: -80px;
+  left: -60px;
   width: clamp(80px, 18vw, 140px);
   height: auto;
+  border-radius: 7px;
   border: var(--black-border) solid black;
-  box-shadow: 5px 5px 0px rgba(0, 0, 0, 1);
-
+  box-shadow: 3px 3px 0 var(--shadow);
 }
 
 .menu {
   position: absolute;
   top: -25px;
-  right: 12px; 
+  right: 12px;
   display: flex;
   gap: 12px;
 }
@@ -92,58 +105,55 @@ body.clicking {
   height: 44px;
   padding: 0 0.6rem;
   border: var(--black-border) solid black;
-  font-family: "AtaCustomFont", sans-serif;
+  font-family: "AtaCustomFonts";
+  font-weight: bold;
   font-size: clamp(1rem, 1.4vw, 1.25rem);
   color: white;
   text-decoration: none;
-  cursor: pointer;
-  transition: transform 150ms ease, box-shadow 150ms ease;
-  box-shadow: 6px 6px 0px rgba(0, 0, 0, 1);
   cursor: url("../img/cursor/3.png"), auto;
-}
- 
-.menu a:hover {
-  transform: translateY(2px);
-  box-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+  border-radius: 7px;
+  box-shadow: 6px 6px 0 var(--shadow);
+  transition: transform 150ms ease, box-shadow 150ms ease;
 }
 
-.menu a:active
-{
-  transform: translateY(4px);
-  box-shadow: 0px 0px 0px rgba(0, 0, 0, 1);
+.menu a:hover {
+  transform: translateY(2px);
+  box-shadow: 2px 2px 0 var(--shadow);
 }
+
+.menu a:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 var(--shadow);
+}
+
 .git { background-color: #201f1f; }
 .linkedin { background-color: #05519c; }
 .youtube { background-color: #af0000; }
 .iletisim { background-color: #da9500; }
 
- 
-/* Ön yazı metni kutu taşmadan esnek kalsın */
 .onyazi {
   width: 88%;
   max-width: 100%;
   margin: 0 auto;
-  color: #fafafa;
   font-size: clamp(1rem, 1.5vw, 1.5rem);
   line-height: 1.5;
   text-align: left;
+  color: var(--primary-color);
   cursor: url("../img/cursor/2.png"), auto;
-  
   word-break: break-word;
   overflow-wrap: anywhere;
   hyphens: auto;
   font-family: "AtaCustomFont", sans-serif;
 }
-/* FOOTER */
 
+/* 7. Footer Stilleri */
 .site-footer {
   width: 100%;
-  background: #0f1724;
-  color: #d1d5db;
+  background: var(--footer-bg);
+  color: var(--footer-text);
   padding: 20px 16px;
-  box-sizing: border-box;
   font-family: Inter, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  border-top: 1px solid rgba(255,255,255,0.04);
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 .footer-inner {
@@ -162,27 +172,31 @@ body.clicking {
 
 .credit {
   margin: 8px 0 0;
-  font-size: 0.85rem;
+  font-size: 0.80rem;
   color: #9ca3af;
   letter-spacing: 0.2px;
 }
- 
-/* Küçük ekran düzeni */
+
+/* 8. Medya Sorguları */
+/* Küçük ekranlar için (mobil) */
 @media (max-width: 480px) {
-  :root { --black-border: 4px; }
+  :root {
+    --black-border: 4px;
+  }
 
   .box {
     width: 90vw;
     padding: 1.2rem;
+    min-height: auto; /* height yerine min-height kullanıldı */
     padding-top: 4.6rem;
-    box-shadow: 7px 7px 0px var(--shadow);
+    box-shadow: 3px 3px 0 var(--shadow);
   }
 
   .ata-img {
     top: -5%;
     left: -3%;
     width: 72px;
-    border: calc(var(--black-border)) solid black;
+    border: var(--black-border) solid black;
   }
 
   .menu {
@@ -202,31 +216,84 @@ body.clicking {
     font-size: 0.95rem;
   }
 
-  /* Mobilde imleç iptal etme (dokunmatik cihazlar için) */
   body {
-    cursor: auto !important;
+    margin: 3.5%;
+    cursor: auto; /* Dokunmatik için */
   }
 
   .quote { font-size: 0.88rem; }
   .credit { font-size: 0.78rem; }
+  .site-footer { width: 100%; }
 }
 
+/* Orta ekranlar için */
 @media (min-width: 481px) and (max-width: 1024px) {
   .box {
     width: 80vw;
+    padding: 1.2rem;
+    min-height: auto;
+    padding-top: 4.6rem;
+    box-shadow: 3px 3px 0 var(--shadow);
   }
+
   .onyazi {
     width: 90%;
   }
+
   .menu a {
     min-width: 60px;
     height: 44px;
     font-size: clamp(1rem, 1.1vw, 1.2rem);
   }
+
   .ata-img {
     top: -5%;
     left: -9%;
-    width: 72px;
     width: clamp(80px, 12vw, 120px);
   }
+
+  body {
+    margin: 3.5%;
+    cursor: auto;
+  }
+
+  .quote { font-size: 0.88rem; }
+  .credit { font-size: 0.78rem; }
+  .site-footer { width: 100%; }
+}
+
+/* Büyük ekranlar için */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .box {
+    width: 80vw;
+    padding: 1.2rem;
+    min-height: auto;
+    padding-top: 4.6rem;
+    box-shadow: 3px 3px 0 var(--shadow);
+  }
+
+  .onyazi {
+    width: 90%;
+  }
+
+  .menu a {
+    min-width: 60px;
+    height: 44px;
+    font-size: clamp(1rem, 1.1vw, 1.2rem);
+  }
+
+  .ata-img {
+    top: -5%;
+    left: -9%;
+    width: clamp(80px, 12vw, 120px);
+  }
+
+  body {
+    margin: 3.5%;
+    cursor: auto;
+  }
+
+  .quote { font-size: 0.88rem; }
+  .credit { font-size: 0.78rem; }
+  .site-footer { width: 100%; }
 }

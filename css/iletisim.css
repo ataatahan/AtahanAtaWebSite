@@ -1,5 +1,5 @@
 :root {
-  --bg: #8292a7;
+  --bg: #77a4e4;
   --card: #48a2d6;
   --accent: #004099;
   --muted: #000000;
@@ -20,13 +20,21 @@ body {
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "AtaCustomFonts";
+  src: url("../fonts/DeliciousHandrawn-Regular.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   background: linear-gradient(180deg, var(--bg), #0f386d);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "AtaCustomFont", sans-serif;
   cursor: url("../img/cursor/1.png"), auto;
+  font-family: "AtaCustomFonts";
 }
 .wrap {
   width: 100%;
@@ -39,6 +47,7 @@ body {
   box-shadow: 0 8px 30px rgba(226, 113, 8, 0.06);
   border: 5px solid #000000;
   cursor: url("../img/cursor/1.png"), auto;
+  border-radius: 20px;
 }
 .card h1 {
   margin: 0 0 12px;
@@ -77,11 +86,12 @@ textarea {
   text-decoration: none;
   display: inline-block;
   border: 4px solid #000000;
-  font-family: "AtaCustomFont", sans-serif;
+  font-family: "AtaCustomFonts";
   font-size: x-large;
   transition: transform 150ms ease, box-shadow 150ms ease;
   box-shadow: 6px 6px 0px rgba(0, 0, 0, 1);
   cursor: url("../img/cursor/3.png"), auto;
+  border-radius: 7px;
 }
 .btn:hover {
   transform: translateY(2px);
@@ -105,11 +115,12 @@ textarea {
   display: inline-flex; /* flex yaptık */
   align-items: center; /* dikey ortala */
   justify-content: center; /* yatay ortala */
-  font-family: "AtaCustomFont", sans-serif;
+  font-family: "AtaCustomFonts";
   font-size: x-large;
   padding: 10px 14px;
   transition: transform 150ms ease, box-shadow 150ms ease;
   box-shadow: 6px 6px 0px rgba(0, 0, 0, 1);
+  border-radius: 7px;
   cursor: url("../img/cursor/3.png"), auto;
 }
 .btn-home:hover {
@@ -140,7 +151,7 @@ textarea {
 #reply_to,
 #subject,
 #message {
-  font-family: "AtaCustomFont", sans-serif;
+  font-family: "AtaCustomFont";
 }
 .actions-home {
   margin-left: auto;
