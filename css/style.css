@@ -14,7 +14,7 @@ html, body {
 }
  
 body {
-  background: linear-gradient(to bottom, #4ce6fa, #0a71d8);
+  background: linear-gradient(to bottom, #2d3748, #1a202c);
   min-height: 100dvh;
   font-family: "AtaCustomFont", sans-serif;
   cursor: url("../img/cursor/1.png"), auto;
@@ -27,7 +27,7 @@ body.clicking {
  
 @font-face {
   font-family: "AtaCustomFont";
-  src: url("../fonts/DeliciousHandrawn-Regular.ttf") format("truetype");
+  src: url("../fonts/CoolveticaRg.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
@@ -53,13 +53,12 @@ body.clicking {
  
 .box {
   position: relative;
-  width: 800px;
-  min-height: 440px;       
+  width: 1400px;
+  min-height: 550px;       
   margin: 0 auto;
-  background: linear-gradient(to bottom, #ffa600,#a76c00);
+  background: linear-gradient(to bottom, #2c2c2c,#181818);
   color: white;
   border: var(--black-border) solid black;
-  border-radius: 12px;
   box-shadow: 15px 15px 0px rgba(0, 0, 0, 0.7);
  
   padding: clamp(2rem, 3vw, 2.5rem);
@@ -72,7 +71,6 @@ body.clicking {
   left: -80px;
   width: clamp(80px, 18vw, 140px);
   height: auto;
-  border-radius: 10px;
   border: var(--black-border) solid black;
   box-shadow: 5px 5px 0px rgba(0, 0, 0, 1);
 
@@ -94,77 +92,79 @@ body.clicking {
   height: 44px;
   padding: 0 0.6rem;
   border: var(--black-border) solid black;
-  border-radius: 10px;
   font-family: "AtaCustomFont", sans-serif;
   font-size: clamp(1rem, 1.4vw, 1.25rem);
   color: white;
   text-decoration: none;
   cursor: pointer;
   transition: transform 150ms ease, box-shadow 150ms ease;
-  box-shadow: 5px 5px 0px rgba(0, 0, 0, 1);
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 1);
   cursor: url("../img/cursor/3.png"), auto;
 }
  
 .menu a:hover {
-  transform: translateY(3px);
+  transform: translateY(2px);
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+}
+
+.menu a:active
+{
+  transform: translateY(4px);
   box-shadow: 0px 0px 0px rgba(0, 0, 0, 1);
 }
-.git { background-color: #252424; }
-.linkedin { background-color: #0a66c2; }
-.youtube { background-color: #ff0000; }
+.git { background-color: #201f1f; }
+.linkedin { background-color: #05519c; }
+.youtube { background-color: #af0000; }
+.iletisim { background-color: #da9500; }
 
-.contact
-{
-  position: absolute;
-  top: 160px;
-  right: 740px; 
-  display: flex;
-  gap: 12px;
-}
-
-.contact a
-{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 96px;
-  height: 44px;
-  padding: 0 0.6rem;
-  border: var(--black-border) solid black;
-  border-radius: 12px;
-  font-family: "AtaCustomFont", sans-serif;
-  font-size: clamp(1rem, 1.4vw, 1.25rem);
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
-  transition: transform 150ms ease, box-shadow 150ms ease;
-  box-shadow: 5px 5px 0px rgba(0, 0, 0, 1);
-  cursor: url("../img/cursor/3.png"), auto;
-}
-
-.contact a:hover
-{
-  transform: translateY(3px);
-  box-shadow: 0px 0px 0px rgba(0, 0, 0, 1);
-}
-.iletisim { background-color: #5896a1; }
  
 /* Ön yazı metni kutu taşmadan esnek kalsın */
 .onyazi {
   width: 88%;
   max-width: 100%;
   margin: 0 auto;
-  color: #252424;
+  color: #fafafa;
   font-size: clamp(1rem, 1.5vw, 1.5rem);
   line-height: 1.5;
   text-align: left;
   cursor: url("../img/cursor/2.png"), auto;
- 
-  /* Taşmayı engelle */
+  
   word-break: break-word;
   overflow-wrap: anywhere;
   hyphens: auto;
   font-family: "AtaCustomFont", sans-serif;
+}
+/* FOOTER */
+
+.site-footer {
+  width: 100%;
+  background: #0f1724;
+  color: #d1d5db;
+  padding: 20px 16px;
+  box-sizing: border-box;
+  font-family: Inter, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.quote {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-style: italic;
+  opacity: 0.95;
+}
+
+.credit {
+  margin: 8px 0 0;
+  font-size: 0.85rem;
+  color: #9ca3af;
+  letter-spacing: 0.2px;
 }
  
 /* Küçük ekran düzeni */
@@ -175,41 +175,27 @@ body.clicking {
     width: 94vw;
     padding: 1.2rem;
     padding-top: 4.2rem;
-    border-radius: 10px;
     box-shadow: 7px 7px 0px var(--shadow);
   }
 
   .ata-img {
-    top: -12%;
-    left: 2%;
+    top: -5%;
+    left: -3%;
     width: 72px;
-    border-radius: 10px;
     border: calc(var(--black-border)) solid black;
   }
 
   .menu {
-    top: -23px;
-    right: 8px;
-    gap: 8px;
+    top: -15px;
+    right: -4px;
+    gap: 3px;
   }
 
   .menu a {
-    min-width: 72px;
+    min-width: 52px;
     height: 40px;
     padding: 0 0.4rem;
-    font-size: 0.95rem;
-  }
-
-  .contact {
-    top: 410px;
-    right: 8px;
-  }
-
-  .contact a {
-    min-width: 72px;
-    height: 40px;
-    padding: 0 0.4rem;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
   }
 
   .onyazi {
@@ -221,4 +207,7 @@ body.clicking {
   body {
     cursor: auto !important;
   }
+
+  .quote { font-size: 0.88rem; }
+  .credit { font-size: 0.78rem; }
 }
