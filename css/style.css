@@ -18,7 +18,8 @@
 
 /* 3. Genel HTML ve Body Stilleri */
 html,
-body {
+body
+{
   height: 100%;
 }
 
@@ -58,10 +59,15 @@ body.clicking {
 
 /* 6. Layout ve Bileşen Stilleri */
 .container {
+  margin: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start;
   min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 30px;
 }
 
 .box {
@@ -146,7 +152,7 @@ body.clicking {
   font-family: "AtaCustomFont", sans-serif;
 }
 
-/* 7. Footer Stilleri */
+/*Footer*/
 .site-footer {
   width: 100%;
   background: var(--footer-bg);
@@ -187,9 +193,32 @@ body.clicking {
   .box {
     width: 90vw;
     padding: 1.2rem;
-    min-height: auto; /* height yerine min-height kullanıldı */
+    min-height: auto;
     padding-top: 4.6rem;
     box-shadow: 3px 3px 0 var(--shadow);
+  }
+
+  .box3 {
+    width: 90vw;
+    padding: 1.2rem;
+    min-height: auto;
+    padding-top: 4.6rem;
+    box-shadow: 3px 3px 0 var(--shadow);
+  }
+
+  .project-header {
+    flex-direction: column;  /* Küçük ekranlarda üst üste */
+    align-items: flex-start;
+  }
+  .project-description {
+    max-width: 100%;  /* Tam genişlik */
+    font-size: 0.9rem;
+  }
+  .project-images {
+    gap: 10px;
+  }
+  .project-images img {
+    width: clamp(150px, 40vw, 200px);  /* Daha küçük resimler */
   }
 
   .ata-img {
@@ -235,6 +264,22 @@ body.clicking {
     padding-top: 4.6rem;
     box-shadow: 3px 3px 0 var(--shadow);
   }
+  .box3 {
+    width: 80vw;
+    padding: 1.2rem;
+    min-height: auto;
+    padding-top: 4.6rem;
+    box-shadow: 3px 3px 0 var(--shadow);
+  }
+  .project-header {
+    gap: 15px;
+  }
+  .project-description {
+    font-size: 1rem;
+  }
+  .project-images img {
+    width: clamp(200px, 20vw, 250px);
+  }
 
   .onyazi {
     width: 90%;
@@ -270,6 +315,16 @@ body.clicking {
     min-height: auto;
     padding-top: 4.6rem;
     box-shadow: 3px 3px 0 var(--shadow);
+  }
+  .box3 {
+    width: 80vw;
+    padding: 1.2rem;
+    min-height: auto;
+    padding-top: 4.6rem;
+    box-shadow: 3px 3px 0 var(--shadow);
+  }
+  .project-images img {
+    width: clamp(250px, 25vw, 300px);
   }
 
   .onyazi {

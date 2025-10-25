@@ -1,8 +1,8 @@
 :root {
-  --bg: #77a4e4;
-  --card: #48a2d6;
+  --bg: #1a202c;
+  --card: #2d3748;
   --accent: #004099;
-  --muted: #000000;
+  --muted: #ffffff;
 }
 * {
   box-sizing: border-box;
@@ -29,7 +29,7 @@ body {
 }
 
 body {
-  background: linear-gradient(180deg, var(--bg), #0f386d);
+  background: linear-gradient(180deg, var(--bg));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,6 +47,7 @@ body {
   box-shadow: 0 8px 30px rgba(226, 113, 8, 0.06);
   border: 5px solid #000000;
   cursor: url("../img/cursor/1.png"), auto;
+  color: white;
   border-radius: 20px;
 }
 .card h1 {
