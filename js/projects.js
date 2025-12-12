@@ -10,7 +10,7 @@
       title: 'PetTagAppDemo',
       link: 'https://github.com/ataatahan/PetTagAppDemo',
       description: 'Evcil hayvan takip ve yönetim sistemi. SOLID prensipleri ve Clean Architecture kullanılarak geliştirilmiştir.',
-      language: 'C#'
+      language: ['C#', 'HTML', 'CSS', 'JavaScript']
     },
     {
       title: 'PhoneBookApp-ADO.NET',
