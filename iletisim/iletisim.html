@@ -2,7 +2,7 @@
 <html lang="tr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover" />
     <meta name="author" content="Atahan ATA" />
     <meta name="description" content="Atahan ATA ile iletişime geçin. Projeleriniz, işbirliği teklifleri veya sorularınız için mesaj gönderin." />
     <meta name="theme-color" content="#1a202c" />
@@ -39,6 +39,7 @@
           class="contatcform"
           placeholder="Adınız"
           required
+          autocomplete="name"
         />
 
         <label for="reply_to">E-posta</label>
@@ -49,6 +50,8 @@
           class="contatcform"
           placeholder="ornek@adres.com"
           required
+          autocomplete="email"
+          inputmode="email"
         />
 
         <label for="subject">Konu</label>
@@ -68,6 +71,7 @@
           class="contatcform"
           placeholder="Mesajınız..."
           required
+          rows="6"
         ></textarea>
 
         <div class="actions">

@@ -51,8 +51,21 @@ body {
   cursor: url("../img/cursor/1.png"), auto;
   font-family: "AtaCustomFonts";
   min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport height for mobile */
   padding: 1rem;
   transition: background 0.3s ease;
+  overflow-x: hidden; /* Yatay kaydırmayı önle */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Küçük ekranlarda body'yi üstten hizala */
+@media (max-width: 480px) {
+  body {
+    align-items: flex-start;
+    padding-top: max(1rem, env(safe-area-inset-top, 1rem));
+    padding-bottom: max(1rem, env(safe-area-inset-bottom, 1rem));
+  }
 }
 
 /* Mobil cihazlarda cursor'u kaldır */
@@ -72,11 +85,35 @@ body {
     height: 45px;
     font-size: 1.3rem;
   }
+
+  /* Dokunmatik hedefler için minimum boyut */
+  .btn,
+  .btn-home,
+  .theme-toggle {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* Form alanları için dokunmatik optimizasyonu */
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    -webkit-tap-highlight-color: rgba(218, 149, 0, 0.2);
+    tap-highlight-color: rgba(218, 149, 0, 0.2);
+  }
 }
 .wrap {
   width: 100%;
   max-width: 720px;
   padding: 24px;
+  box-sizing: border-box;
+}
+
+/* Küçük ekranlarda wrap padding'ini azalt */
+@media (max-width: 480px) {
+  .wrap {
+    padding: 0;
+  }
 }
 .card {
   background: var(--card);
@@ -87,10 +124,20 @@ body {
   color: var(--text-primary);
   border-radius: 20px;
   transition: background 0.3s ease, color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
 }
 .card h1 {
   margin: 0 0 12px;
   font-size: 22px;
+}
+
+/* Küçük ekranlarda başlık font boyutunu azalt */
+@media (max-width: 480px) {
+  .card h1 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
 }
 label {
   display: block;
@@ -99,6 +146,14 @@ label {
   color: var(--text-primary);
   cursor: url("../img/cursor/1.png"), auto;
   transition: color 0.3s ease;
+}
+
+/* Küçük ekranlarda label font boyutunu azalt */
+@media (max-width: 480px) {
+  label {
+    font-size: 14px;
+    margin-top: 8px;
+  }
 }
 input[type="text"],
 input[type="email"],
@@ -111,6 +166,20 @@ textarea {
   background-color: var(--bg);
   color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Küçük ekranlarda input padding'ini azalt */
+@media (max-width: 480px) {
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    padding: 10px;
+    margin-top: 4px;
+    border-width: 3px;
+  }
 }
 
 input[type="text"]:invalid:not(:focus):not(:placeholder-shown),
@@ -125,10 +194,27 @@ input[type="email"]:valid:not(:placeholder-shown) {
 textarea {
   min-height: 120px;
 }
+
+/* Küçük ekranlarda textarea yüksekliğini azalt */
+@media (max-width: 480px) {
+  textarea {
+    min-height: 100px;
+  }
+}
 .actions {
   display: flex;
   gap: 10px;
   margin-top: 2px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Küçük ekranlarda actions margin'ini azalt */
+@media (max-width: 480px) {
+  .actions {
+    margin-top: 12px;
+    gap: 8px;
+  }
 }
 .btn {
   background: var(--accent);
@@ -393,6 +479,54 @@ textarea {
   }
 }
 
+/* Landscape mod için özel ayarlar */
+@media (max-width: 768px) and (orientation: landscape) {
+  body {
+    padding: 0.5rem;
+  }
+
+  .wrap {
+    padding: 12px;
+    max-width: 100%;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .card h1 {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  label {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  textarea {
+    min-height: 80px;
+  }
+
+  .actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .btn,
+  .btn-home {
+    flex: 1 1 auto;
+    min-width: 100px;
+  }
+}
+
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -405,43 +539,174 @@ textarea {
 }
 
 
-/* Küçük mobil cihazlar (480px ve altı) */
-@media (max-width: 480px) {
+/* iPhone SE ve küçük ekranlar için özel optimizasyon (375px ve altı) */
+@media (max-width: 375px) {
+  body {
+    padding: 8px;
+    align-items: flex-start; /* Üstten hizala */
+    padding-top: env(safe-area-inset-top, 8px);
+  }
+
+  .wrap {
+    padding: 8px;
+    margin: 0;
+  }
+
+  .card {
+    padding: 12px;
+    border-width: 3px;
+    border-radius: 12px;
+  }
+
+  .card h1 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+
+  label {
+    font-size: 13px;
+    margin-top: 8px;
+    margin-bottom: 3px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    font-size: 16px;
+    padding: 10px;
+    border-width: 3px;
+    margin-top: 4px;
+  }
+
+  textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+
+  .actions {
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .btn,
+  .btn-home {
+    font-size: 14px;
+    padding: 12px;
+    min-height: 44px;
+    border-width: 3px;
+  }
+
+  .status {
+    font-size: 12px;
+    padding: 8px;
+    margin-top: 10px;
+  }
+
+  .theme-toggle {
+    top: 8px;
+    right: 8px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    border-width: 3px;
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.7);
+  }
+}
+
+/* Çok küçük mobil cihazlar (320px ve altı) */
+@media (max-width: 320px) {
+  body {
+    padding: 6px;
+    padding-top: env(safe-area-inset-top, 6px);
+  }
+
+  .wrap {
+    padding: 6px;
+  }
+
+  .card {
+    padding: 10px;
+    border-width: 2px;
+  }
+
+  .card h1 {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+
+  label {
+    font-size: 12px;
+    margin-top: 8px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    font-size: 16px;
+    padding: 8px;
+    border-width: 2px;
+  }
+
+  .btn,
+  .btn-home {
+    font-size: 13px;
+    padding: 10px;
+    min-height: 42px;
+  }
+
+  .theme-toggle {
+    top: 6px;
+    right: 6px;
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Küçük mobil cihazlar (376px - 480px) */
+@media (min-width: 376px) and (max-width: 480px) {
   /* Güvenli bölge boşlukları (iOS Safe Area) */
   html,
   body {
     padding: env(safe-area-inset-top) env(safe-area-inset-right)
       env(safe-area-inset-bottom) env(safe-area-inset-left);
     min-height: 100vh;
+    min-height: 100dvh; /* Dynamic viewport height */
     margin: 0;
   }
 
   /* Ana kapsayıcı ayarları */
   .wrap {
     margin: 0;
-    padding: 12px;
+    padding: 10px;
     max-width: 100%;
     width: 100%;
+    box-sizing: border-box;
   }
 
   .card {
-    padding: 16px;
+    padding: 14px;
     border-width: 3px;
     border-radius: 15px;
+    margin: 0;
   }
 
   /* Başlık */
   .card h1 {
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.3;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
+    word-wrap: break-word;
   }
 
   /* Form etiket ve alanları */
   label {
-    font-size: 14px;
-    margin-top: 12px;
+    font-size: 13px;
+    margin-top: 10px;
     margin-bottom: 4px;
+    display: block;
+    width: 100%;
   }
 
   input[type="text"],
@@ -449,23 +714,27 @@ textarea {
   textarea {
     width: 100%;
     font-size: 16px; /* iOS zoom önleme için minimum 16px */
-    padding: 12px;
+    padding: 10px;
     border-width: 3px;
     border-radius: 5px;
     -webkit-appearance: none;
     appearance: none;
+    box-sizing: border-box;
+    margin: 0;
   }
 
   textarea {
-    min-height: 120px;
+    min-height: 110px;
     resize: vertical;
+    font-family: "AtaCustomFont";
   }
 
   /* Butonlar ve aksiyonlar */
   .actions {
     flex-direction: column;
-    gap: 12px;
-    margin-top: 16px;
+    gap: 10px;
+    margin-top: 14px;
+    width: 100%;
   }
 
   .actions-home {
@@ -476,10 +745,32 @@ textarea {
   .btn,
   .btn-home {
     width: 100%;
-    font-size: 16px;
-    padding: 14px;
+    font-size: 15px;
+    padding: 12px;
     border-width: 3px;
-    min-height: 48px; /* Dokunmatik için minimum yükseklik */
+    min-height: 46px; /* Dokunmatik için minimum yükseklik */
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Status mesajı */
+  .status {
+    font-size: 12px;
+    padding: 9px;
+    margin-top: 10px;
+  }
+
+  /* Tema toggle butonu mobilde */
+  .theme-toggle {
+    top: 10px;
+    right: 10px;
+    width: 42px;
+    height: 42px;
+    font-size: 1.25rem;
+    border-width: 3px;
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.7);
   }
 }
 
@@ -489,26 +780,31 @@ textarea {
   body {
     padding: env(safe-area-inset-top) env(safe-area-inset-right)
       env(safe-area-inset-bottom) env(safe-area-inset-left);
+    min-height: 100dvh;
   }
 
   .wrap {
     margin: 0 auto;
     padding: 20px;
     max-width: 100%;
+    box-sizing: border-box;
   }
 
   .card {
     padding: 20px;
     border-width: 4px;
+    margin: 0;
   }
 
   .card h1 {
     font-size: 22px;
+    margin-bottom: 16px;
   }
 
   label {
     font-size: 16px;
     margin-top: 12px;
+    margin-bottom: 6px;
   }
 
   input[type="text"],
@@ -517,6 +813,7 @@ textarea {
     font-size: 16px;
     padding: 10px;
     border-width: 4px;
+    box-sizing: border-box;
   }
 
   textarea {
@@ -526,6 +823,7 @@ textarea {
   .actions {
     flex-wrap: wrap;
     gap: 10px;
+    margin-top: 16px;
   }
 
   .btn,
@@ -533,10 +831,21 @@ textarea {
     flex: 1 1 auto;
     min-width: 120px;
     min-height: 44px;
+    box-sizing: border-box;
   }
 
   .actions-home {
     margin-left: auto;
+    flex: 0 0 auto;
+  }
+
+  /* Tema toggle butonu */
+  .theme-toggle {
+    top: 15px;
+    right: 15px;
+    width: 48px;
+    height: 48px;
+    font-size: 1.4rem;
   }
 }
 
@@ -544,6 +853,7 @@ textarea {
 @media (min-width: 769px) and (max-width: 1024px) {
   .wrap {
     padding: 24px;
+    max-width: 90%;
   }
 
   .card {
@@ -563,5 +873,9 @@ textarea {
   textarea {
     font-size: 16px;
     padding: 12px;
+  }
+
+  .actions {
+    flex-wrap: nowrap;
   }
 }
