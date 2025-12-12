@@ -2,9 +2,14 @@
 <html lang="tr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
     <meta name="author" content="Atahan ATA" />
-    <title>İletişim — Hemen Gönder</title>
+    <meta name="description" content="Atahan ATA ile iletişime geçin. Projeleriniz, işbirliği teklifleri veya sorularınız için mesaj gönderin." />
+    <meta name="theme-color" content="#1a202c" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>İletişim — Atahan ATA</title>
     <link rel="icon" type="image/png" href="../img/siteicon/a.png" />
     <link rel="stylesheet" href="../css/iletisim.css" />
 
@@ -14,11 +19,17 @@
     ></script>
 
     <script src="../js/iletisim.js" defer></script>
+    <script src="../js/theme.js" defer></script>
   </head>
   <body>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Tema değiştir" title="Açık/Koyu tema değiştir">
+      <span class="theme-icon"></span>
+    </button>
+    <a href="#contact-form" class="skip-link">Forma geç</a>
     <main class="wrap">
-      <form id="contactForm" class="card" autocomplete="off">
+      <form id="contactForm" class="card" autocomplete="off" aria-label="İletişim formu">
         <h1>Mesaj Gönder</h1>
+        <div id="status" class="status" role="status" aria-live="polite" aria-atomic="true"></div>
 
         <label for="from_name">İsim</label>
         <input
@@ -60,10 +71,10 @@
         ></textarea>
 
         <div class="actions">
-          <button type="submit" class="btn">Gönder</button>
-          <button type="button" id="clearBtn" class="btn ghost">Temizle</button>
+          <button type="submit" class="btn" aria-label="Mesajı gönder">Gönder</button>
+          <button type="button" id="clearBtn" class="btn ghost" aria-label="Formu temizle">Temizle</button>
           <div class="actions-home">
-            <a class="btn-home" href="../index.html">🏠</a>
+            <a class="btn-home" href="../index.html" aria-label="Ana sayfaya dön">🏠</a>
           </div>
         </div>
       </form>

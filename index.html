@@ -2,20 +2,70 @@
 <html lang="tr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
     <meta name="author" content="Atahan ATA" />
-    <title>Atahan ATA</title>
+    <meta name="description" content="Atahan ATA - Full Stack .NET Geliştirici Adayı. Web uygulamaları, masaüstü projeleri ve yazılım geliştirme deneyimlerimi paylaştığım portfolyo sitesi." />
+    <meta name="keywords" content="Atahan ATA, Full Stack Developer, .NET Developer, Yazılım Geliştirici, Portfolio, Web Developer" />
+    <meta name="theme-color" content="#1a202c" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://atahanata.com/" />
+    <meta property="og:title" content="Atahan ATA - Full Stack .NET Geliştirici" />
+    <meta property="og:description" content="Full Stack .NET geliştirici adayı. Web uygulamaları, masaüstü projeleri ve yazılım geliştirme deneyimlerimi paylaştığım portfolyo sitesi." />
+    <meta property="og:image" content="https://atahanata.com/img/2_41.JPG" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://atahanata.com/" />
+    <meta property="twitter:title" content="Atahan ATA - Full Stack .NET Geliştirici" />
+    <meta property="twitter:description" content="Full Stack .NET geliştirici adayı. Web uygulamaları, masaüstü projeleri ve yazılım geliştirme deneyimlerimi paylaştığım portfolyo sitesi." />
+    <meta property="twitter:image" content="https://atahanata.com/img/2_41.JPG" />
+    
+    <title>Atahan ATA - Full Stack .NET Geliştirici</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="fonts/CoolveticaRg.otf" as="font" type="font/otf" crossorigin />
+    <link rel="preload" href="fonts/DeliciousHandrawn-Regular.ttf" as="font" type="font/ttf" crossorigin />
+    
     <link rel="stylesheet" href="css/style.css" />
     <link rel="icon" type="image/png" href="img/siteicon/a.png">
-    <script defer src="https://cdn.tailwindcss.com"></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/projects.js" defer></script>
+    <script src="js/events.js" defer></script>
+    <script src="js/theme.js" defer></script>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Atahan ATA",
+      "jobTitle": "Full Stack .NET Developer",
+      "url": "https://atahanata.com",
+      "sameAs": [
+        "https://github.com/ataatahan",
+        "https://www.linkedin.com/in/atahan-ata/",
+        "https://www.youtube.com/@AtahanAta"
+      ],
+      "description": "Full Stack .NET geliştirici adayı. Web uygulamaları, masaüstü projeleri ve yazılım geliştirme deneyimlerimi paylaştığım portfolyo sitesi."
+    }
+    </script>
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Ana içeriğe geç</a>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Tema değiştir" title="Açık/Koyu tema değiştir">
+      <span class="theme-icon"></span>
+    </button>
     <header></header>
 
-    <main>
+    <main id="main-content">
       <div class="container">
-        <div class="box">
-          <img src="img/2_41.JPG" alt="atapp" class="ata-img" />
+        <div class="box" role="article">
+          <img src="img/ata.JPG" alt="Atahan ATA profil fotoğrafı" class="ata-img" loading="lazy" />
 
           <nav class="menu" aria-label="Sosyal menü">
             <a
@@ -40,6 +90,18 @@
               >YouTube</a
             >
             <a
+              class="etkinlikler"
+              href="#events"
+              rel="noopener noreferrer"
+              >Etkinlikler</a
+            >
+            <a
+              class="projeler"
+              href="#projects"
+              rel="noopener noreferrer"
+              >Projeler</a
+            >
+            <a
               class="iletisim"
               href="iletisim/iletisim.html"
               rel="noopener noreferrer"
@@ -48,25 +110,68 @@
           </nav>
 
           <div class="onyazi">
+            <h1>Merhaba! Ben Atahan Ata.</h1>
             <p>
-              <h1>Merhaba! Ben Atahan Ata.</h1>
-              <p>
-              bir Full Stack .NET
-              geliştirici adayıyım.
-              </p>
-              <p>
-              Yazılım geliştirmeye olan ilgimle birlikte, eğitim sürecim boyunca pek çok proje geliştirerek hem front-end hem de back-end alanlarında kendimi sürekli geliştirdim.
-              </p>
-              <p>
-              Gerçekleştirdiğim staj ve proje deneyimleri, bana yazılım geliştirme sürecinin tüm aşamalarında değerli tecrübeler kazandırdı.
-              </p>
-              <p>
-              Bu portfolyoda; geliştirdiğim web uygulamalarını, masaüstü projelerimi ve kullandığım teknolojileri bulabilirsiniz.
-              Amacım, teknoloji dünyasında sürekli öğrenmeye, üretmeye ve kendimi geliştirmeye devam etmek.
-              </p>
+              Full Stack .NET geliştirici adayıyım. Modern web teknolojileri ve yazılım geliştirme alanında kendimi sürekli geliştiriyorum.
             </p>
+            <p>
+              Eğitim sürecim boyunca hem front-end hem de back-end alanlarında pek çok proje geliştirerek deneyim kazandım. C#, .NET, Entity Framework Core gibi teknolojilerle çalışıyorum ve modern yazılım geliştirme prensiplerini uyguluyorum.
+            </p>
+            <p>
+              Gerçekleştirdiğim staj ve proje deneyimleri sayesinde yazılım geliştirme sürecinin tüm aşamalarında (tasarım, geliştirme, test, deployment) tecrübe sahibiyim. S.O.L.I.D prensipleri, Clean Architecture ve Design Patterns gibi konularda bilgi sahibiyim.
+            </p>
+            <p>
+              Bu portfolyoda geliştirdiğim web uygulamalarını, masaüstü projelerimi, katıldığım teknoloji etkinliklerini ve kullandığım teknolojileri bulabilirsiniz. Amacım, teknoloji dünyasında sürekli öğrenmeye, üretmeye ve kendimi geliştirmeye devam etmek.
+            </p>
+            <div class="cv-download-section">
+              <a 
+                href="img/cv/AtahanATA_CV_2025.pdf" 
+                target="_blank"
+                rel="noopener noreferrer"
+                class="cv-download-btn"
+                aria-label="CV'yi yeni sekmede aç"
+              >
+                📄 CV'mi İndir
+              </a>
+            </div>
           </div>
         </div>
+
+        <!-- Etkinlikler Bölümü -->
+        <section id="events" class="events-section" aria-label="Etkinlikler ve Paylaşımlar">
+          <div class="events-header">
+            <h2>Etkinlikler & Paylaşımlar</h2>
+            <p class="events-subtitle">Katıldığım teknoloji etkinlikleri ve deneyimlerim</p>
+          </div>
+          
+          <div class="events-container" id="events-container" role="list">
+            <!-- Etkinlikler JavaScript ile buraya eklenecek -->
+          </div>
+        </section>
+
+        <!-- Projeler Bölümü -->
+        <section id="projects" class="projects-section" aria-label="GitHub Projeleri">
+          <div class="projects-header">
+            <h2>Projelerim</h2>
+            <p class="projects-subtitle">Geliştirdiğim açık kaynak projeler</p>
+          </div>
+          
+          <div id="projects-loading" class="projects-loading" role="status" aria-live="polite" style="display: none;">
+            <div class="loading-spinner"></div>
+            <p>Projeler yükleniyor...</p>
+          </div>
+          
+          <div id="projects-container" class="projects-container" role="list">
+            <!-- Projeler JavaScript ile buraya eklenecek -->
+          </div>
+          
+          <div id="projects-error" class="projects-error" role="alert" aria-live="assertive" style="display: none;">
+            <p>Projeler yüklenirken bir hata oluştu. Lütfen daha sonra tekrar deneyin.</p>
+            <a href="https://github.com/ataatahan" target="_blank" rel="noopener noreferrer" class="error-link">
+              GitHub profilime git →
+            </a>
+          </div>
+        </section>
       </div>
     </main>
 

@@ -15,9 +15,30 @@
       const st = document.getElementById('status');
       const c = document.getElementById('clearBtn');
       if (!f) return;
+      const submitBtn = f.querySelector('button[type="submit"]');
+      
       f.addEventListener('submit', e => {
         e.preventDefault();
-        if (st) { st.textContent = 'Gönderiliyor...'; st.className = 'status'; }
+        
+        // Form validation
+        if (!f.checkValidity()) {
+          f.reportValidity();
+          return;
+        }
+        
+        // Disable submit button
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Gönderiliyor...';
+        }
+        
+        if (st) { 
+          st.textContent = 'Gönderiliyor...'; 
+          st.className = 'status';
+          st.setAttribute('role', 'status');
+          st.setAttribute('aria-live', 'polite');
+        }
+        
         const p = {
           from_name: (document.getElementById('from_name')||{}).value?.trim()||'',
           reply_to: (document.getElementById('reply_to')||{}).value?.trim()||'',
@@ -25,20 +46,78 @@
           message: (document.getElementById('message')||{}).value?.trim()||'',
           to_email: E
         };
+        
         if (typeof emailjs !== 'undefined' && emailjs.send) {
           emailjs.send(S, T, p).then(res => {
-            if (st) { st.textContent = 'Mesaj gönderildi — teşekkürler!'; st.classList.add('success'); }
-            try { f.reset(); } catch (_) {}
+            if (st) { 
+              st.textContent = '✓ Mesaj başarıyla gönderildi! Teşekkürler.'; 
+              st.classList.add('success');
+              st.setAttribute('role', 'alert');
+            }
+            try { 
+              f.reset(); 
+              // Re-enable submit button
+              if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Gönder';
+              }
+            } catch (_) {}
+            
+            // Clear success message after 5 seconds
+            setTimeout(() => {
+              if (st) {
+                st.textContent = '';
+                st.className = 'status';
+                st.removeAttribute('role');
+              }
+            }, 5000);
           }, err => {
             console.error('ejs_err', err);
-            if (st) { st.textContent = 'Gönderilemedi. Konsolu kontrol et veya EmailJS ayarlarını gözden geçir.'; st.classList.add('error'); }
+            if (st) { 
+              st.textContent = '✗ Gönderilemedi. Lütfen tekrar deneyin veya doğrudan e-posta gönderin.'; 
+              st.classList.add('error');
+              st.setAttribute('role', 'alert');
+            }
+            // Re-enable submit button on error
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.textContent = 'Gönder';
+            }
           });
         } else {
           console.error('emailjs_not_ready');
-          if (st) { st.textContent = 'E-posta servisi hazır değil.'; st.classList.add('error'); }
+          if (st) { 
+            st.textContent = '✗ E-posta servisi hazır değil. Lütfen daha sonra tekrar deneyin.'; 
+            st.classList.add('error');
+            st.setAttribute('role', 'alert');
+          }
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Gönder';
+          }
         }
       });
-      if (c) c.addEventListener('click', () => { try { f.reset(); } catch (_) {} if (st) st.textContent = ''; });
+      if (c) c.addEventListener('click', () => { 
+        try { 
+          f.reset(); 
+          if (st) {
+            st.textContent = '';
+            st.className = 'status';
+            st.removeAttribute('role');
+          }
+        } catch (_) {} 
+      });
+      
+      // Form alanlarına focus olduğunda status mesajını temizle
+      const formInputs = f.querySelectorAll('input, textarea');
+      formInputs.forEach(input => {
+        input.addEventListener('focus', () => {
+          if (st && st.textContent && st.classList.contains('error')) {
+            st.textContent = '';
+            st.className = 'status';
+          }
+        });
+      });
     });
   } catch (err) { console.error('fatal', err); }
 })();
