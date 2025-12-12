@@ -26,8 +26,8 @@
       link: 'https://www.linkedin.com/posts/atahan-ata_googledev2025-googledevelopers-kocaeli-activity-7403077504254529537-uabN?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC3EpAkBGQ0SqGJqImpjVkWTGM9xIjLkyJs'
     },
     {
-      month: 'Aralık',
-      year: '2024',
+      month: 'Kasım',
+      year: '2025',
       title: 'PetTag — Evcil Hayvan Takip ve Yönetim Sistemi',
       badge: 'Proje',
       description: 'Ekip olarak geliştirdiğimiz PetTag, basit, temiz ve genişletilebilir bir evcil hayvan takip ve yönetim sistemi demosudur. Bu proje, sahipler, evcil hayvanlar, sağlık kayıtları, anlık konumları ve veteriner randevularının tek bir yapı altında yönetilebilmesi fikrinden yola çıkılarak tasarlandı.',

@@ -6,6 +6,8 @@
   --text-primary: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.8);
   --border-color: rgba(255, 255, 255, 0.1);
+  --footer-bg: #0f1724;
+  --footer-text: #d1d5db;
 }
 
 [data-theme="light"] {
@@ -16,9 +18,14 @@
   --text-primary: #1a202c;
   --text-secondary: rgba(26, 32, 44, 0.7);
   --border-color: rgba(0, 0, 0, 0.1);
+  --footer-bg: #e5e7eb;
+  --footer-text: #4b5563;
 }
 * {
   box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
 }
 html,
 body {
@@ -26,6 +33,33 @@ body {
   margin: 0;
   font-family: "AtaCustomFont", sans-serif;
   cursor: url("../img/cursor/1.png"), auto;
+}
+
+/* Özel Scrollbar Stilleri */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--card);
+  border: 2px solid var(--bg);
+  border-radius: 6px;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Firefox için scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--card) var(--bg);
 }
 @font-face {
   font-family: "AtaCustomFont";
@@ -46,13 +80,11 @@ body {
 body {
   background: linear-gradient(180deg, var(--bg));
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column; /* Footer için flex column */
   cursor: url("../img/cursor/1.png"), auto;
   font-family: "AtaCustomFonts";
   min-height: 100vh;
   min-height: 100dvh; /* Dynamic viewport height for mobile */
-  padding: 1rem;
   transition: background 0.3s ease;
   overflow-x: hidden; /* Yatay kaydırmayı önle */
   width: 100%;
@@ -62,9 +94,15 @@ body {
 /* Küçük ekranlarda body'yi üstten hizala */
 @media (max-width: 480px) {
   body {
-    align-items: flex-start;
+    padding: 0;
     padding-top: max(1rem, env(safe-area-inset-top, 1rem));
-    padding-bottom: max(1rem, env(safe-area-inset-bottom, 1rem));
+    padding-bottom: 0;
+  }
+
+  .wrap {
+    align-items: flex-start;
+    padding: 12px;
+    padding-top: 0;
   }
 }
 
@@ -105,8 +143,14 @@ body {
 .wrap {
   width: 100%;
   max-width: 720px;
+  margin: 0 auto;
   padding: 24px;
   box-sizing: border-box;
+  flex: 1; /* Footer'ın altında kalması için */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0; /* Flexbox overflow için */
 }
 
 /* Küçük ekranlarda wrap padding'ini azalt */
@@ -126,6 +170,7 @@ body {
   transition: background 0.3s ease, color 0.3s ease;
   width: 100%;
   box-sizing: border-box;
+  margin: 0 auto; /* Ortalamak için */
 }
 .card h1 {
   margin: 0 0 12px;
@@ -482,7 +527,9 @@ textarea {
 /* Landscape mod için özel ayarlar */
 @media (max-width: 768px) and (orientation: landscape) {
   body {
-    padding: 0.5rem;
+    padding: 0;
+    padding-top: 0.5rem;
+    padding-bottom: 0;
   }
 
   .wrap {
@@ -542,9 +589,9 @@ textarea {
 /* iPhone SE ve küçük ekranlar için özel optimizasyon (375px ve altı) */
 @media (max-width: 375px) {
   body {
-    padding: 8px;
-    align-items: flex-start; /* Üstten hizala */
+    padding: 0;
     padding-top: env(safe-area-inset-top, 8px);
+    padding-bottom: 0;
   }
 
   .wrap {
@@ -617,8 +664,9 @@ textarea {
 /* Çok küçük mobil cihazlar (320px ve altı) */
 @media (max-width: 320px) {
   body {
-    padding: 6px;
+    padding: 0;
     padding-top: env(safe-area-inset-top, 6px);
+    padding-bottom: 0;
   }
 
   .wrap {
@@ -669,8 +717,9 @@ textarea {
   /* Güvenli bölge boşlukları (iOS Safe Area) */
   html,
   body {
-    padding: env(safe-area-inset-top) env(safe-area-inset-right)
-      env(safe-area-inset-bottom) env(safe-area-inset-left);
+    padding: 0;
+    padding-top: env(safe-area-inset-top, 0);
+    padding-bottom: env(safe-area-inset-bottom, 0);
     min-height: 100vh;
     min-height: 100dvh; /* Dynamic viewport height */
     margin: 0;
@@ -877,5 +926,72 @@ textarea {
 
   .actions {
     flex-wrap: nowrap;
+  }
+}
+
+/* Footer Stilleri */
+.site-footer {
+  width: 100%;
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  padding: 20px 16px;
+  padding-bottom: max(20px, env(safe-area-inset-bottom, 20px)); /* iOS safe area */
+  font-family: Inter, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  border-top: 1px solid var(--border-color);
+  animation: fadeIn 1s ease-out 1s both;
+  margin-top: auto; /* En alta yapışması için */
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.quote {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-style: italic;
+  opacity: 0.95;
+}
+
+.credit {
+  margin: 8px 0 0;
+  font-size: 0.80rem;
+  color: #9ca3af;
+  letter-spacing: 0.2px;
+}
+
+/* Light theme'de credit rengi */
+[data-theme="light"] .credit {
+  color: #6b7280;
+}
+
+/* Footer mobil optimizasyonları */
+@media (max-width: 480px) {
+  .site-footer {
+    padding: 16px 12px;
+    padding-bottom: max(16px, env(safe-area-inset-bottom, 16px));
+  }
+
+  .quote {
+    font-size: 0.8rem;
+    padding: 0 1rem;
+  }
+
+  .credit {
+    font-size: 0.7rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .quote {
+    font-size: 0.85rem;
+  }
+
+  .credit {
+    font-size: 0.75rem;
   }
 }
