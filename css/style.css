@@ -31,6 +31,7 @@
   --text-primary: #1a202c;
   --text-secondary: rgba(26, 32, 44, 0.7);
   --shadow: rgba(0, 0, 0, 0.15);
+  --primary-color: #1a202c;
   --footer-bg: #e5e7eb;
   --footer-text: #4b5563;
   --border-color: rgba(0, 0, 0, 0.1);
@@ -100,8 +101,7 @@ body.clicking {
 }
 
 /* 5. Erişilebilirlik Stilleri */
-.menu a:focus,
-.contact a:focus {
+.menu a:focus {
   outline: 3px dashed rgba(255, 255, 255, 0.5);
   outline-offset: 4px;
 }
@@ -756,16 +756,6 @@ body.clicking {
   }
 }
 
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
 
 /* Smooth Scroll */
 html {
@@ -1429,12 +1419,6 @@ html {
   border: 2px solid rgba(0, 0, 0, 0.3);
 }
 
-.project-stars,
-.project-forks {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-}
 
 .project-footer {
   display: flex;

@@ -8,7 +8,7 @@
     {
       month: 'Aralık',
       year: '2025',
-      title: 'Google Dev 2025 Kocaeli Konferansı',
+      title: 'Google DevFest 2025 Kocaeli Konferansı',
       badge: 'Konferans',
       description: 'Bugün teknoloji ekosisteminin nabzını tutan Google Dev 2025 Kocaeli Konferansı\'na katılma fırsatı buldum. Sektörün geleceğini şekillendiren yenilikleri, yapay zeka odaklı çözümleri ve modern yazılım geliştirme trendlerini birinci elden dinlemek benim için çok değerliydi.',
       images: [
@@ -22,7 +22,7 @@
         '🔹 Cloud, AI, mobil ve web teknolojileri',
         '🔹 Networking fırsatları'
       ],
-      tags: ['#GoogleDev2025', '#GoogleDevelopers', '#Kocaeli', '#AI', '#Cloud', '#SoftwareDevelopment'],
+      tags: ['#GoogleDevFest2025', '#GoogleDevelopers', '#Kocaeli', '#AI', '#Cloud', '#SoftwareDevelopment'],
       link: 'https://www.linkedin.com/posts/atahan-ata_googledev2025-googledevelopers-kocaeli-activity-7403077504254529537-uabN?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC3EpAkBGQ0SqGJqImpjVkWTGM9xIjLkyJs'
     },
     {
