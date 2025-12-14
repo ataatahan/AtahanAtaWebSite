@@ -26,6 +26,38 @@
       link: 'https://www.linkedin.com/posts/atahan-ata_googledev2025-googledevelopers-kocaeli-activity-7403077504254529537-uabN?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC3EpAkBGQ0SqGJqImpjVkWTGM9xIjLkyJs'
     },
     {
+  month: 'Aralık',
+  year: '2025',
+  title: 'SmartTech – Akıllı Ev Ürünleri E-Ticaret Platformu',
+  badge: 'Proje',
+  description: 'SmartTech, akıllı ev ürünlerinin satışını yapan, Clean Architecture prensipleriyle geliştirilmiş bir ASP.NET Core MVC e-ticaret platformudur. Kullanıcı, admin ve bayii taraflarını kapsayan kapsamlı yapısıyla gerçek hayattaki e-ticaret senaryolarını birebir yansıtan bir portfolyo projesidir.',
+  images: [
+    { src: 'img/events/smarttech/smarttech-1.png', alt: 'SmartTech Projesi - Ana Sayfa' },
+    { src: 'img/events/smarttech/smarttech-2.png', alt: 'SmartTech Projesi - Ürün Listesi' },
+    { src: 'img/events/smarttech/smarttech-3.jpg', alt: 'SmartTech Projesi - Admin Paneli' }
+  ],
+  highlights: [
+    '🏗️ Clean Architecture & Katmanlı Mimari',
+    '🔐 ASP.NET Core Identity ile Rol & Yetkilendirme',
+    '🛒 Session & Database tabanlı Sepet Sistemi',
+    '🧩 Repository & Unit of Work Pattern',
+    '✅ FluentValidation & Custom Exception Yönetimi',
+    '⚙️ Admin Paneli (Area Tabanlı)',
+    '💻 ASP.NET Core MVC & Razor Views'
+  ],
+  tags: [
+    '#SmartTech',
+    '#AspNetCore',
+    '#CleanArchitecture',
+    '#ECommerce',
+    '#MVC',
+    '#EntityFramework',
+    '#Identity',
+    '#PortfolioProject'
+  ],
+  link: 'https://www.linkedin.com/posts/atahan-ata_dotnet-aspnetcore-cleanarchitecture-activity-7405920155823763456-OOuJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC3EpAkBGQ0SqGJqImpjVkWTGM9xIjLkyJs'
+},
+    {
       month: 'Kasım',
       year: '2025',
       title: 'PetTag — Evcil Hayvan Takip ve Yönetim Sistemi',

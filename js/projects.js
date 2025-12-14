@@ -7,21 +7,27 @@
   // language: Tek dil için string ('C#') veya birden fazla dil için array (['HTML', 'CSS', 'JavaScript'])
   const PROJECTS = [
     {
+      title: 'SmartTech - Akıllı Ev Ürünleri E-Ticaret Platformu',
+      link: 'https://github.com/ataatahan/SmartTech.git',
+      description: 'Modern bir e-ticaret platformu olan SmartTech, akıllı ev ürünlerinin satışını yapan, Clean Architecture prensipleriyle geliştirilmiş bir ASP.NET Core MVC uygulamasıdır.',
+      language: ['C#', 'HTML', 'CSS', 'JavaScript']
+    },
+    {
       title: 'PetTagAppDemo',
       link: 'https://github.com/ataatahan/PetTagAppDemo',
       description: 'Evcil hayvan takip ve yönetim sistemi. SOLID prensipleri ve Clean Architecture kullanılarak geliştirilmiştir.',
       language: ['C#', 'HTML', 'CSS', 'JavaScript']
     },
     {
-      title: 'PhoneBookApp-ADO.NET',
-      link: 'https://github.com/ataatahan/PhoneBookApp-ADO.NET',
-      description: 'ADO.NET kullanılarak geliştirilmiş telefon rehberi uygulaması. CRUD işlemleri ve veritabanı yönetimi içerir.',
-      language: 'C#'
+      title: 'AtahanAtaWebSite',
+      link: 'https://github.com/ataatahan/AtahanAtaWebSite',
+      description: 'Kişisel portfolyo web sitesi. Modern web teknolojileri ile responsive tasarım uygulanmıştır.',
+      language: ['HTML', 'CSS', 'JavaScript'] // Birden fazla dil
     },
     {
       title: 'CarRentalOOPDemo',
-      link: 'https://github.com/ataatahan/CarRentalOOPDemo',
-      description: 'Nesne yönelimli programlama prensipleri ile geliştirilmiş araç kiralama sistemi demo projesi.',
+      link: 'https://github.com/ataatahan/CarRentalOOPDemo.git',
+      description: 'Bu proje, temel araç kiralama işlemlerini gerçekleştiren konsol tabanlı bir C# uygulamasıdır.Müşteri kayıtları, araç yönetimi ve kiralama işlemleri kolayca yapılabilmektedir.',
       language: 'C#'
     },
     {
@@ -29,12 +35,6 @@
       link: 'https://github.com/ataatahan/S.O.L.I.D-Principles-Infographic-Tr',
       description: 'S.O.L.I.D yazılım geliştirme prensiplerinin Türkçe infografik ve açıklamaları.',
       language: '' // Markdown içerik, dil belirtilmemiş
-    },
-    {
-      title: 'AtahanAtaWebSite',
-      link: 'https://github.com/ataatahan/AtahanAtaWebSite',
-      description: 'Kişisel portfolyo web sitesi. Modern web teknolojileri ile responsive tasarım uygulanmıştır.',
-      language: ['HTML', 'CSS', 'JavaScript'] // Birden fazla dil
     },
     {
       title: 'SmartHomeDeviceOOPDemo',
