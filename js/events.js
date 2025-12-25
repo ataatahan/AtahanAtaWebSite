@@ -5,6 +5,34 @@
 
   // Manuel etkinlik listesi - İstediğiniz zaman burayı güncelleyebilirsiniz
   const EVENTS = [
+      {
+      month: 'Aralık',
+      year: '2025',
+      title: 'BilgeAdam Akademi bünyesinde verilen .NET Full Stack Developer Eğitimimi başarıyla tamamladım!',
+      badge: 'Sertifika',
+      description: 'BilgeAdam Akademi ’nin sektör odaklı eğitim yaklaşımı sayesinde; yazılım geliştirme süreçlerine hem teorik hem de uygulamalı olarak hâkim olma fırsatı buldum. Eğitim süreci boyunca edindiğim bilgi ve deneyimler, kariyer hedeflerim için güçlü bir temel oluşturdu. Bu süreçte bilgi ve tecrübelerini bizlerle paylaşan, her zaman destek olan değerli eğitmenlerim Fatih ALKAN ve Hakan Şahin hocalarıma ve benimle birlikte eğitim alan sınıf arkadaşlarıma da özellikle teşekkür ederim.',
+      images: [
+        { src: 'img/events/bilgeadam/bilgeadam-1.jpeg', alt: 'BilgeAdam .NET Full Stack Mezuniyet - Görsel 1' },
+        { src: 'img/events/bilgeadam/bilgeadam-2.jpeg', alt: 'BilgeAdam .NET Full Stack Mezuniyet - Görsel 2' },
+        { src: 'img/events/bilgeadam/bilgeadam-3.jpeg', alt: 'BilgeAdam .NET Full Stack Mezuniyet - Görsel 3' },
+        { src: 'img/events/bilgeadam/bilgeadam-4.jpeg', alt: 'BilgeAdam .NET Full Stack Mezuniyet - Görsel 3' }
+      ],
+      highlights: [
+        '🔹 ASP.NET Core & C# ile Full Stack geliştirme',
+        '🔹 MVC, REST API ve Katmanlı Mimari',
+        '🔹 Gerçek projeler ve uygulamalı eğitim',
+        '🔹 Alanında deneyimli eğitmenler'
+      ],
+      tags: [
+        '#BilgeAdam',
+        '#DotNet',
+        '#FullStackDeveloper',
+        '#SoftwareDevelopment',
+        '#ASPNetCore',
+        '#CSharp'
+      ],
+      link: 'https://www.linkedin.com/posts/atahan-ata_bilgeadam-akademi-b%C3%BCnyesinde-verilen-activity-7408901639186878464-Bs8t?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC3EpAkBGQ0SqGJqImpjVkWTGM9xIjLkyJs'
+    },
     {
       month: 'Aralık',
       year: '2025',
